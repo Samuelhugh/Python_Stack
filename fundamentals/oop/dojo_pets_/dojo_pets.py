@@ -151,7 +151,7 @@ simba.yourName() # Modifying A method of the class Cat(Pet) using polymorphism t
 
 # class Ninja creating an instance of a Ninja and setting attributes and then creating methods /W Encapsulation
 sam = Ninja("Sam", "Hughes", tyson, "dog food", "dog treats, dog biscuits, dog bone") #instance/object of a Ninja, With a class Pet assigned to it and one of it attribute
-sam.hello() # Methods for the class Ninja and below
+sam.hello() # Method calls for the class Ninja and below
 sam.listMyTreats()
 sam.feed()
 sam.walk()
