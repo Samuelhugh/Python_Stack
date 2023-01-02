@@ -1,27 +1,26 @@
-class Mathdojo:
+# Creating and Defining the Class (PascalCased)
+class MathDojo:
 
     def __init__(self):
         self.result = 0
-
-    def add(self, *num):
-        for i in range(len(num)):
-            self.result += num[i]
-            # print(self.result)
+# Using Splat Operator
+    def add(self, arg_one, *args):
+        self.result += arg_one + sum(args)
+        print("RESULT: ", self.result)
         return self
 
-
-    def subtract(self, *num):
-        for j in range(len(num)):
-            self.result -= num[j]
-            # print(self.result)
+# Using Splat Operator
+    def subtract(self, arg_one, *args):
+        self.result -= arg_one + sum(args)
+        print(self.result)
         return self
 
 # Instances
-md = Mathdojo()
-mdd = Mathdojo()
+math_done = MathDojo()
+math_done_two = MathDojo()
 
-# Invoking or Calling my Methods
-x = md.add(2).add(2, 5, 1).subtract(3, 2).result
-y = mdd.add(1).add(1, 4, 0).subtract(2, 1).result
+# Invoking or Calling my Methods (Testing)
+x = math_done.add(2).add(2,5,1).subtract(3,2).result
+y = math_done_two.add(3,5).result
 print(x)
 print(y)
