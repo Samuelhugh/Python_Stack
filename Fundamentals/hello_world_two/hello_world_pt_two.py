@@ -1,10 +1,11 @@
 # 1. TASK: print "Hello World"
 hw = 'Hello World'
+# Built-in String Method
 print(hw.title())
 # 2. print "Hello Noelle!" with the name in a variable
 name = "Samuel"
 fav_num = 33
-print('Hello My name is %s and my favorite number is %d' % (name,fav_num))	# with a comma
+print('Hello my name is %s, and my favorite number is %d.' % (name,fav_num))	# with a comma
 print('Hello ' + name)	# with a +
 # 3. print "Hello 42!" with the number in a variable
 num = 33
