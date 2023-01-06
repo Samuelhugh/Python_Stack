@@ -10,6 +10,10 @@ class SList:
         current_head = self.head
 # This line of code is so my new New Head has access to the previous current_head
         new_node.next = current_head
+# Now making the new_node the New Head of the Linked List
+        self.head = new_node
+# Returning self to allow chaining
+        return self
 
 
 
