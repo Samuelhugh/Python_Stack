@@ -34,7 +34,7 @@ class SList:
         if self.head == None:
             self.add_to_front(value)
 # Making sure the rest of this Function does not happen, since the beginning line resulted in True and to allow chaining
-        return self
+            return self
 # Now I want to create a new node with the given value, New Instance of Node Class created
         new_node = SLNode(value)
 # Create a variable to traverse through the List to reach the Node with the Next attribute that Points to None, because that means it is the last Node
@@ -45,12 +45,14 @@ class SList:
             runner = runner.next
 # When Loop has reached the final Node I want to set the New Node to be it's Next Value
         runner.next = new_node
+# Return self to allow for chaining
+        return self
 
-
-
-
-
+# Creating new Instance of my Singly Linked list Manager
 my_list = SList()
+# Testing the Methods
+my_list.add_to_front("are").add_to_front("Linked lists").add_to_back("fun!").print_node_data()
+
 
 
 if __name__ == "__main__":
