@@ -1,4 +1,4 @@
-# Import
+# Import from Parent
 import node_manager
 
 class SLNode:
