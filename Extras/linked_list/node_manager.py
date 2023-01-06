@@ -28,6 +28,24 @@ class SList:
 # Once Loop is done Return self to allow for chaining
         return self
 
+# Method to add a Node to the back/end of my Linked List
+    def add_to_back(self, value):
+# Edge Case... if List is empty
+        if self.head == None:
+            self.add_to_front(value)
+# Making sure the rest of this Function does not happen, since the beginning line resulted in True and to allow chaining
+        return self
+# Now I want to create a new node with the given value, New Instance of Node Class created
+        new_node = SLNode(value)
+# Create a variable to traverse through the List to reach the Node with the Next attribute that Points to None, because that means it is the last Node
+        runner = self.head
+# Loop to Iterate through List till I reach the last Node
+        while (runner.next != None):
+# While the Expression is true Increment/Update the runner to the Next Node, since I checked to make sure the current Node has a Next Pointer Value/Data via the Loop
+            runner = runner.next
+# When Loop has reached the final Node I want to set the New Node to be it's Next Value
+        runner.next = new_node
+
 
 
 
