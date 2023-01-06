@@ -1,5 +1,5 @@
 # Import from Parent
-import node_manager
+from node_manager import SList
 
 class SLNode:
     def __init__(self, value):
