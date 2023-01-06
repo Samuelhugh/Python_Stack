@@ -23,6 +23,11 @@ class SList:
         while (runner != None):
 # Print the value/data of each node
             print(runner.value)
+# Now I need to Increment or Update the runner to Point to the next Nodes Data
+            runner = runner.next
+# Once Loop is done Return self to allow for chaining
+        return self
+
 
 
 
