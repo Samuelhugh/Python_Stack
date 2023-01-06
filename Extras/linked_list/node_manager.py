@@ -15,6 +15,16 @@ class SList:
 # Returning self to allow chaining
         return self
 
+# Method to traverse Linked List's Nodes and print its Data
+    def print_node_data(self):
+# This line of code creates a Pointer named runner to start at the front of my List for Iteration
+        runner = self.head
+# While loop, best for list when not knowing when the end will be, to run while runner is not None
+        while (runner != None):
+# Print the value/data of each node
+            print(runner.value)
+
+
 
 
 my_list = SList()
