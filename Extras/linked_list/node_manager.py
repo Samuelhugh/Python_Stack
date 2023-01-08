@@ -81,6 +81,9 @@ class SList:
 # Remove a Node with the Selected Value
     # def remove_value(self, value):
 
+# Insert a Node at random in List
+    # def insert_at(self, value, n):
+
 # Creating new Instance of my Singly Linked List Manager
 my_list = SList()
 # Testing the Methods
