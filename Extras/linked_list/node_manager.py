@@ -81,7 +81,7 @@ class SList:
 # Remove a Node with the Selected Value
     # def remove_value(self, value):
 
-# Creating new Instance of my Singly Linked list Manager
+# Creating new Instance of my Singly Linked List Manager
 my_list = SList()
 # Testing the Methods
 my_list.add_to_front("are").add_to_front("Linked lists").add_to_back("fun!").print_node_data()
