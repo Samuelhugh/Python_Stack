@@ -79,44 +79,32 @@ class SList:
         return self
 
 # Remove a Node with the Selected Value
-    def remove_value(self, value):
+    def remove_value(self, val):
 # Check if List is empty
-        if self.head != None:
-# Check if the Value matches the Head Node
-            if self.head.data != value:
-# Check/Validate if Head Node has a Next Node to Initiate a Traversal of the List
-                if self.head.next != None:
-# Now Create Variable to hold each Node in order to check it
-                    runner = self.head
-# Traverse the List
-                    while runner.next != None:
-# Already checked to see if Head Nodes Data was a match, so now I can start at the Head Nodes Next Nodes Data and check each Node accordingly to see if I can Remove it
-                        if runner.next.data != value:
-# Update the runner Variable to the Next Node in the List
-                            runner = runner.next
-# If runner Variable matches the Value
-                        else:
-# Since I already checked the Head Node I can update the runner Variable(that is Pointing to the Reference/Memory Address of the Head Node) to the current Nodes Next Nodes Next Node
-                            runner = runner.next.next
-# Then break out of the Loop to return the result
-                            break
-# Else if the Head Node does not have a Next Node, I cannot Initiate the start or a traversal of the List
-                else:
-# Print Validation/Error message
-                    print("Node not found in List")
-                    # return self
-# If the Head Nodes Data matches the Value
-            else:
-# Check/Validate if the Head Node has a Next Node I can Reset/Point the Head to
-                if self.head.next != None:
-# If so then Reset/Point the Head to the Next Node
-                    self.head = self.head.next
-# Else Point/Reset the Head to None
-                else:
-# Pointing the Head Node to None
-                    self.head = None
+        if self.head == None:
+            raise IndexError("List is Empty, Sorry mate")
+# Check if the Parameter/Input Value matches the Head Nodes Value
+        if self.head.value == val:
+# Example of how I can use other methods in the Class to keep my code DRY and Simple
+            return self.remove_from_front()
+# Now create Variable to hold each Node in order to check it against the Value
+        current_node = self.head
+# Traverse the List, stops one short of the node I need to remove
+        while (current_node.next and current_node.next.value != val):
+# While the expression continues to be evaluated as True I Update the current_node Variable
+            current_node = current_node.next
+# "Double" checking  to make sure this Node has a next node which is the Node I will be removing
+        if current_node.next != None:
+            # result = current_node.next.value
+# Deletion of the Node that match the Input/Parameter value
+            current_node.next = current_node.next.next
 # Return self for chaining
-        return self
+            return self
+# Else statement if the Value is not in the List
+        else:
+            print("Node not in List")
+# This is the same thing but keeps my code DRY and is simpler
+            # raise IndexError(f"Value ({val}) does not exist in the list.")
 
 
 # Insert a Node at random in List
@@ -130,6 +118,9 @@ my_list.add_to_front("are").add_to_front("Linked lists").add_to_back("fun!").pri
 sll2 = SList()
 # Testing the Methods
 sll2.add_to_front("z").add_to_front("y").remove_from_end().remove_from_end().remove_from_end().print_node_data()
+sll3 = SList()
+sll3.add_to_front(1).add_to_front(2).remove_value(13)
+
 
 
 
