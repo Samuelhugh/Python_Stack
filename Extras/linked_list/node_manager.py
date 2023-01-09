@@ -120,6 +120,7 @@ sll2 = SList()
 sll2.add_to_front("z").add_to_front("y").remove_from_end().remove_from_end().remove_from_end().print_node_data()
 # Creating new Instance of my Singly Linked List Manager
 sll3 = SList()
+# Testing the Methods
 sll3.add_to_front(1).add_to_front(2).remove_value(13)
 
 
