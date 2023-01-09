@@ -129,7 +129,6 @@ my_list.add_to_front("are").add_to_front("Linked lists").add_to_back("fun!").pri
 # Creating new Instance of my Singly Linked List Manager
 sll2 = SList()
 # Testing the Methods
-
 sll2.add_to_front("z").add_to_front("y").remove_from_end().remove_from_end().remove_from_end().print_node_data()
 
 
