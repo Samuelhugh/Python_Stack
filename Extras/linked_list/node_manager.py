@@ -79,7 +79,45 @@ class SList:
         return self
 
 # Remove a Node with the Selected Value
-    # def remove_value(self, value):
+    def remove_value(self, value):
+# Check if List is empty
+        if self.head != None:
+# Check if the Value matches the Head Node
+            if self.head.data != value:
+# Check/Validate if Head Node has a Next Node to Initiate a Traversal of the List
+                if self.head.next != None:
+# Now Create Variable to hold each Node in order to check it
+                    runner = self.head
+# Traverse the List
+                    while runner.next != None:
+# Already checked to see if Head Nodes Data was a match, so now I can start at the Head Nodes Next Nodes Data and check each Node accordingly to see if I can Remove it
+                        if runner.next.data != value:
+# Update the runner Variable to the Next Node in the List
+                            runner = runner.next
+# If runner Variable matches the Value
+                        else:
+# Since I already checked the Head Node I can update the runner Variable(that is Pointing to the Reference/Memory Address of the Head Node) to the current Nodes Next Nodes Next Node
+                            runner = runner.next.next
+# Then break out of the Loop to return the result
+                            break
+# Else if the Head Node does not have a Next Node, I cannot Initiate the start or a traversal of the List
+                else:
+# Print Validation/Error message
+                    print("Node not found in List")
+                    # return self
+# If the Head Nodes Data matches the Value
+            else:
+# Check/Validate if the Head Node has a Next Node I can Reset/Point the Head to
+                if self.head.next != None:
+# If so then Reset/Point the Head to the Next Node
+                    self.head = self.head.next
+# Else Point/Reset the Head to None
+                else:
+# Pointing the Head Node to None
+                    self.head = None
+# Return self for chaining
+        return self
+
 
 # Insert a Node at random in List
     # def insert_at(self, value, n):
