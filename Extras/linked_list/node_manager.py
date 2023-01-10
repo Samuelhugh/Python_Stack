@@ -106,14 +106,6 @@ class SList:
 # This is the same thing but keeps my code DRY and is simpler
             # raise IndexError(f"Value ({val}) does not exist in the list.")
 
-
-
-
-#     else:
-# # Create a Variable to hold the already present Head Node, since I already checked for that
-#         current_pointer = self.head
-# 
-
 # Insert a Node at random in List
     def insert_at(self, val, n):
 # n is the length of the List, So it must be positive so I can add to the List
@@ -135,9 +127,9 @@ class SList:
             while pointer.next and n > 0:
 # This is making a connection to each node as well walking up the List to the position where the current node im working with needs to be positioned, i.e. this while loop will stop one before the position needed all while checking each previous(parent) node and making the correct links and still stopping one node before the position needed because I need to make the link of the parent nodes next attribute to be the current node im working with positioning it right where it needs to be still
                 n -= 1
-# walking up the list still
+# Walking up the list still
                 pointer = pointer.next
-# this portion of code is linking the current node im working to its parent node i.e. the node one position right before where the current node im working with needs to be positioned in the List
+# This portion of code is linking the current node im working with to its parent node i.e. the node one position right before where the current node im working with needs to be positioned in the List
             new_node = SLNode(val)
             new_node.next = pointer.next
             pointer.next = new_node
@@ -155,6 +147,7 @@ sll2.add_to_front("z").add_to_front("y").remove_from_end().remove_from_end().rem
 sll3 = SList()
 # Testing the Methods
 sll3.add_to_front(1).add_to_front(2).remove_value(1)
+# Creating new Instance of my Singly Linked List Manager
 sll4 = SList()
 sll4.insert_at("I love linked lists!", 6)
 sll4.print_node_data()
