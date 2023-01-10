@@ -126,6 +126,7 @@ class SList:
     def insert_at(self, val, n):
 # n is the length of the List, So it must be positive so I can add to the List
         if n < 0:
+# Use error checking/handling to raise an IndexError
             raise IndexError("n must be 0 or a positive integer.")
 
         if not self.head or n == 0:
@@ -161,7 +162,7 @@ sll3.add_to_front(1).add_to_front(2).remove_value(1)
 sll4 = SList()
 sll4.insert_at("I love linked lists!", 6)
 sll4.print_node_data()
-sll4.insert_at(22, 0)
+sll4.insert_at(22, -1)
 sll4.print_node_data()
 sll4.insert_at(44, 1)
 sll4.print_node_data()
