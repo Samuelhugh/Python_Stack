@@ -107,9 +107,8 @@ class SList:
             # raise IndexError(f"Value ({val}) does not exist in the list.")
 
 
-# Insert a Node at random in List
-#     def insert_at(self, value, n):
-# # n is the length of the List, So it must be positive before I check if the List is empty
+
+
 #     if n < 0:
 # # Either raise IndexError(simpler, Dryer), or return self
 #         return self
@@ -125,6 +124,7 @@ class SList:
 
 # Insert a Node at random in List
     def insert_at(self, val, n):
+# n is the length of the List, So it must be positive so I can add to the List
         if n < 0:
             raise IndexError("n must be 0 or a positive integer.")
 
