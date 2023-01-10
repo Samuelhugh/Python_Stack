@@ -152,7 +152,7 @@ sll4 = SList()
 # Testing the Methods
 sll4.insert_at("I love linked lists!", 6)
 sll4.print_node_data()
-sll4.insert_at(22, -1)
+sll4.insert_at(22, 0)
 sll4.print_node_data()
 sll4.insert_at(44, 1)
 sll4.print_node_data()
