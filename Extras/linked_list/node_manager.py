@@ -132,7 +132,7 @@ class SList:
             self.add_to_front(val)
         else:
             pointer = self.head
-# In oreser to insert at the right position, I must decrement before the while loop so I can check the previous(parent) nodes
+# In order to insert at the right position, I must decrement before the while loop so I can check the previous(parent) nodes
             # n -= 1
             while pointer.next and n > 0:
                 n -= 1
