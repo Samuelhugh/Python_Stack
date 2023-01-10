@@ -109,8 +109,6 @@ class SList:
 
 
 
-#         self.add_to_front()
-# # If its not the Head or a Replacement
 #     else:
 # # Create a Variable to hold the already present Head Node, since I already checked for that
 #         current_pointer = self.head
@@ -124,7 +122,9 @@ class SList:
             raise IndexError("n must be 0 or a positive integer.")
 # Checking/Validating if Head Node or if a replacement for Head Node is being inserted
         if not self.head or n == 0:
+# If so add it to the Front of the List - using the Method I already created making my code efficient, DRY, Simple, and Reusable
             self.add_to_front(val)
+# If its not the Head Node being entered again or a Replacement
         else:
             pointer = self.head
 # In order to insert at the right position, I must decrement before the while loop, because if I don't then the node will be inserted one position ahead of where it needs to be inserted (memory leak, garbage collection will clean it up at runtime depending on the language)so to solve that I would need to decrement the node one position before where the node is to be inserted so now I have a link from the parent(previous node(s)) so now each node will be connected/linked correctly and none will be left in a void, or a memory leak, and garbage collection will not have to handle it/clean it up
