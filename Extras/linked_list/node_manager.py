@@ -108,7 +108,39 @@ class SList:
 
 
 # Insert a Node at random in List
-    # def insert_at(self, value, n):
+#     def insert_at(self, value, n):
+# # n is the length of the List, So it must be positive before I check if the List is empty
+#     if n < 0:
+# # Either raise IndexError(simpler, Dryer), or return self
+#         return self
+# # Checking/Validating if Head Node or if a replacement for Head Node is Incoming
+#     if not self.head or n == 0:
+# # Add it to the Front of the List - using Method that I already created to make my code efficient, DRY, Simple, and Reusable
+#         self.add_to_front()
+# # If its not the Head or a Replacement
+#     else:
+# # Create a Variable to hold the already present Head Node, since I already checked for that
+#         current_pointer = self.head
+# 
+
+
+    def insert_at(self, val, n):
+        if n < 0:
+            raise IndexError("n must be 0 or a positive integer.")
+
+        if not self.head or n == 0:
+            self.add_to_front(val)
+        else:
+            pointer = self.head
+# In oreser to insert at the right position, I must decrement before the while loop so I can check the previous(parent) nodes
+            # n -= 1
+            while pointer.next and n > 0:
+                n -= 1
+                pointer = pointer.next
+            new_node = SLNode(val)
+            new_node.next = pointer.next
+            pointer.next = new_node
+
 
 # Creating new Instance of my Singly Linked List Manager
 my_list = SList()
@@ -121,10 +153,34 @@ sll2.add_to_front("z").add_to_front("y").remove_from_end().remove_from_end().rem
 # Creating new Instance of my Singly Linked List Manager
 sll3 = SList()
 # Testing the Methods
-sll3.add_to_front(1).add_to_front(2).remove_value(13)
-
-
-
+sll3.add_to_front(1).add_to_front(2).remove_value(1)
+sll4 = SList()
+sll4.insert_at("I love linked lists!", 6)
+sll4.print_node_data()
+sll4.insert_at(22, 0)
+sll4.print_node_data()
+sll4.insert_at(44, 1)
+sll4.print_node_data()
+sll4.insert_at(33, 1)
+sll4.print_node_data()
+sll4.insert_at(93, 1)
+sll4.print_node_data()
+sll4.insert_at(93, 1)
+sll4.print_node_data()
+sll4.insert_at(93, 1)
+sll4.print_node_data()
+sll4.insert_at(93, 1)
+sll4.print_node_data()
+sll4.insert_at(93, 1)
+sll4.print_node_data()
+sll4.insert_at(93, 1)
+sll4.print_node_data()
+sll4.insert_at(93, 1)
+sll4.print_node_data()
+sll4.insert_at(93, 1)
+sll4.print_node_data()
+sll4.insert_at("But this one is a little far out maybe?", 12345)
+sll4.print_node_data()
 
 if __name__ == "__main__":
     print("the file is being executed directly")
