@@ -109,12 +109,6 @@ class SList:
 
 
 
-#     if n < 0:
-# # Either raise IndexError(simpler, Dryer), or return self
-#         return self
-# # Checking/Validating if Head Node or if a replacement for Head Node is Incoming
-#     if not self.head or n == 0:
-# # Add it to the Front of the List - using Method that I already created to make my code efficient, DRY, Simple, and Reusable
 #         self.add_to_front()
 # # If its not the Head or a Replacement
 #     else:
@@ -128,7 +122,7 @@ class SList:
         if n < 0:
 # Use error checking/handling to raise an IndexError
             raise IndexError("n must be 0 or a positive integer.")
-
+# Checking/Validating if Head Node or if a replacement for Head Node is being inserted
         if not self.head or n == 0:
             self.add_to_front(val)
         else:
