@@ -130,9 +130,9 @@ class SList:
 # Walking up the list still
                 pointer = pointer.next
 # This portion of code is linking the current node im working with to its parent node i.e. the node one position right before where the current node im working with needs to be positioned in the List
-            new_node = SLNode(val)
-            new_node.next = pointer.next
-            pointer.next = new_node
+        new_node = SLNode(val)
+        new_node.next = pointer.next
+        pointer.next = new_node
 
 
 # Creating new Instance of my Singly Linked List Manager
