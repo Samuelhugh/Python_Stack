@@ -115,11 +115,11 @@ class SList:
 # Checking/Validating if Head Node or if a replacement for Head Node is being inserted
         if not self.head or n == 0:
 # If so add it to the Front of the List - using the Method I already created making my code efficient, DRY, Simple, and Reusable
-            self.add_to_front(val)
+        self.add_to_front(val)
 # If its not the Head Node being entered again or a Replacement
         else:
 # Create a Reference Variable to the Head Node, to begin List Traversal and to ensure I have the correct link to each Node whilst Traversing the Linked List and so I can have a reference to the Parent Node of the position that is always one before the position I want to insert the Current Node I am wanting to insert
-            pointer = self.head
+        pointer = self.head
 # In order to insert at the right position, I must decrement before the while loop, because if I don't then the node will be inserted one position ahead of where it needs to be inserted (memory leak, garbage collection will clean it up at runtime depending on the language)so to solve that I would need to decrement the node one position before where the node is to be inserted so now I have a link from the parent(previous node(s)) so now each node will be connected/linked correctly and none will be left in a void, or a memory leak, and garbage collection will not have to handle it/clean it up
 # Adding this is making the connection(link) to the parent node so I have the correct linking of nodes and the node I am currently working on won't be positioned one after/ahead of where it needs to be positioned/ be in a void
         n -= 1
