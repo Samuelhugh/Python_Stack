@@ -128,7 +128,7 @@ class SList:
 # This is making a connection to each node as well walking up the List to the position where the current node im working with needs to be positioned, i.e. this while loop will stop one before the position needed all while checking each previous(parent) node and making the correct links and still stopping one node before the position needed because I need to make the link of the parent nodes next attribute to be the current node im working with positioning it right where it needs to be still
                 n -= 1
 # Walking up the list still
-            pointer = pointer.next
+                pointer = pointer.next
 # This portion of code is linking the current node im working with to its parent node i.e. the node one position right before where the current node im working with needs to be positioned in the List
         new_node = SLNode(val)
         new_node.next = pointer.next
