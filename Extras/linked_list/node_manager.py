@@ -124,7 +124,7 @@ class SList:
 # Adding this is making the connection(link) to the parent node so I have the correct linking of nodes and the node I am currently working on won't be positioned one after/ahead of where it needs to be positioned/ be in a void
             n -= 1
 # List Traversal begins if necessary
-        while pointer.next and n > 0:
+            while pointer.next and n > 0:
 # This is making a connection to each node as well walking up the List to the position where the current node im working with needs to be positioned, i.e. this while loop will stop one before the position needed all while checking each previous(parent) node and making the correct links and still stopping one node before the position needed because I need to make the link of the parent nodes next attribute to be the current node im working with positioning it right where it needs to be still
             n -= 1
 # Walking up the list still
