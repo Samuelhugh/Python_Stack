@@ -10,6 +10,8 @@ class BST:
         if(not self.root):
 # Create new Binary Node with specified Value
             self.root = BTNode(val)
+# Return self
+            return self
 # If not, then create a runner variable to check the left and right of each node; starting from the Root
         runner = self.root
 # While runner has Nodes to traverse through
@@ -40,16 +42,81 @@ class BST:
                     return self
 
 # Find max method for BST
-    def max():
+    def max(self):
+# Create a variable to start at the Root
+        runner = self.root
+# Create a variable to hold the max value starting at the Root
+        max = self.root.value
+# Create a while loop to traverse through only the right side/branches of the BST, because that is the greater than side
+        while(runner.right is not None):
+# Compare the runners Value to all the right sides Nodes
+            if(runner.right.value <= max):
+# If the current Node is less than the max then iterate to the next right Node
+                runner = runner.right
+# Else update the max value
+            else:
+# Updating max
+                max = runner.right.value
+# return max
+        return max
+
 
 # Find min method for BST
-    def min():
+    def min(self):
+# Create a variable to start at the Root
+        runner = self.root
+# Create a variable to hold the min starting at the Root
+        min = self.root.value
+# While the left side has Nodes to traverse, Compare all left side/branches/Nodes to min
+        while(runner.left is not None):
+# Compare the current runner Nodes left Value to that of the min's Value
+            if(runner.left.value >= min):
+# Updating to next left Node
+                runner = runner.left
+# Else Update the min to the current runners left side/branch/Node Value
+            else:
+# Updating min
+                min = runner.left.value
+# Return min
+        return min
 
 # Find out if this BST contains a certain Node
-    def contains():
+    def contains(self, val):
+# Create a variable to start at the Root (almost always)
+        runner = self.root
+# While the runner is not pointing to None, compare/check BST Nodes against that Value
+        while(runner is not None):
+# Check if the Value matches the current runners Value
+            if(runner.value is val):
+# Return true
+                return True
+# If not, check left and right Nodes respectively
+            if(runner.value < val):
+# Check if there is a right Node to iterate to next
+                if(not runner.right):
+# If the runner does not have a right Node, return false
+                    return False
+# Else if it does, point the runner to the next right Node to continue searching for the Value
+                runner = runner.right
+# Else if the value is less than the runners Value, check the left side
+            else:
+# Checking if left side has a Node to iterate to
+                if(not runner.left):
+# Return false, because the Value is not in the BST
+                    return False
+# If there is a Node to iterate to, then update the runner to the left side to continue searching the BST
+                runner = runner.left
+# If the whole BST is check and the value is not found return False
+        return False
 
 # See if this BST is empty
-    def is_empty():
+    def is_empty(self):
+# Check to see if Root Node is not None
+        if(not self.root):
+# If Root Node is not None, return true
+            return True
+# Else the BST is empty and return False
+        return False
 
 # Size of BST method done Recursively
     def size(self, root_node):
@@ -61,8 +128,13 @@ class BST:
 
 # Instantiating a new BST
 bst = BST()
-bst.add(20).add(30).add(10)
+# Testing BST methods
+bst.add(20).add(30).add(38).add(3).add(9)
 print(bst.size(bst.root))
+print(bst.max())
+print(bst.min())
+print(bst.contains(38))
+print(bst.is_empty())
 
 if __name__ == "__main__":
     print("the file is being executed directly")
