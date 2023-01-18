@@ -8,7 +8,7 @@ def is_even(n):
     else:
         return False
 
-# My "unit tests" - Initalized by creating a class that inherit from unittest.TestCase
+# My "unit tests" - Initialized by creating a class that inherit from unittest.TestCase
 class IsEvenTests(unittest.TestCase):
 # Each method in this class is a test to be run
     def test_one(self):
