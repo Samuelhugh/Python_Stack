@@ -12,7 +12,7 @@ class DList:
 # Same with SList, I need to instantiate a new Node from the Node class with the value passed in
         new_node = DLNode(val)
 # Check for Special/Edge/Corner Cases - like if list is empty
-        if self.length is 0:
+        if self.length == 0:
 # Set both the head and tail attributes to the new Node because it is the beginning and end of the new DList, and so that reading the list from either end will point to the same node
             self.head = new_node
             self.tail = new_node
@@ -38,7 +38,7 @@ class DList:
 # Create a var/reference/pointer to hold the address of the instantiated DList Node
         new_node = DLNode(val)
 # Check for Special/Corner/Edge Cases - like an empty list
-        if self.length is 0:
+        if self.length == 0:
 # Making my code Reuseable, DRY, and Simpler
             self.add_to_front(val)
 # Returning self for chaining
