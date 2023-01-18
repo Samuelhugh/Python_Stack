@@ -58,4 +58,22 @@ class DList:
 # Return self for chaining
             return self
 
-            
+# Print DList Node's Values method
+    def print_values(self):
+# Check for Special/Edge/Corner Cases - like list is empty
+        if not self.head:
+# Raise IndexError for empty list
+            raise IndexError("List is empty.")
+# If not, create a Variable/Pointer/Reference to the Head Node to begin printing out each Nodes Values starting at the beginning of the list
+        runner = self.head
+# Use while loop to traverse the DList
+        while(runner != None):
+            print(runner.value)
+# Update to the next Node
+            runner = runner.next
+# Return self for chaining
+        return self
+
+
+dll = DList()
+dll.add_to_front("are").add_to_front("Linked lists").add_to_back("fun!").print_values()
