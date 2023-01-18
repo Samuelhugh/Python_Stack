@@ -74,6 +74,7 @@ class DList:
 # Return self for chaining
         return self
 
-
+# Instantiating a new Doubly Linked List
 dll = DList()
+# Testing DList methods
 dll.add_to_front("are").add_to_front("Linked lists").add_to_back("fun!").print_values()
