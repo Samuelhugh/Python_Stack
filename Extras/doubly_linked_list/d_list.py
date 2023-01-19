@@ -68,13 +68,61 @@ class DList:
         runner = self.head
 # Use while loop to traverse the DList
         while(runner != None):
+# Printing the Values
             print(runner.value)
 # Update to the next Node
             runner = runner.next
 # Return self for chaining
         return self
 
+# Remove from front method
+    def remove_from_front(self):
+# Check for Corner Case
+        if self.length == 0:
+# Raise IndexError
+            raise IndexError("List is empty.")
+# [Optional] Create a Reference to point to the address of the Value I want to remove
+        # removed_front_node = self.head.value
+# I want to sever the current Head and point it to the address of its next Attribute
+        self.head = self.head.next
+# Decrement the helper Attribute accordingly
+        self.length -= 1
+# return for chaining
+        return self
+
+# Remove from back method
+    def remove_from_back(self):
+# Check Edge Case
+        if self.length == 0:
+# Raise an IndexError
+            raise IndexError("List is empty.")
+# Edge Case if only one Node is in list
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+            return self
+# This will look at the Head Nodes next Node next - this is why it is the runner
+        runner = self.head.next
+# I need this walker variable in order to be able to sever the last node, because this will still hold a reference to the last Node if I don't have it and the function will not work
+        walker_node_just_before_the_last = self.head
+        while(runner.next != None):
+            runner = self.head.next
+            walker_node_just_before_the_last = walker_node_just_before_the_last.next
+        walker_node_just_before_the_last.next = None
+# When I get to the last Node, I want to sever its prev reference so that it can be removed from the list
+        runner.prev = None
+# Decrement helper attribute accordingly
+        self.length -= 1
+# Return self for chaining
+        return self
+
+
 # Instantiating a new Doubly Linked List
 dll = DList()
 # Testing DList methods
 dll.add_to_front("are").add_to_front("Linked lists").add_to_back("fun!").print_values()
+print("*******************")
+dll.remove_from_front().print_values()
+print("*******************")
+dll.remove_from_back()
+dll.remove_from_back()
